@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}生徒一覧{% endblock %}
+
+{% block contents %}
+{% for record in object_list %}
+<h6></h6>
+<button type="button" class="btn btn-light" onclick=location.href="{% url 'scoreapp:student' user=record.id %}">{{record.username}}</button><br>
+{% endfor %}
+{% endblock %}
